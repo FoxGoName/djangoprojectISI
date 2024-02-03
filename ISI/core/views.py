@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView, UpdateView
 from store.models import Product
 
 # Create your views here.
@@ -20,3 +21,13 @@ def productManagePage(request):
         'products': products
     }
     return render(request, 'product.html', context)
+
+class productCreateView(CreateView):
+    model = Product
+    template_name = "addProduct.html"
+    fields = '__all__'
+
+class editProductView(UpdateView):
+    model = Product
+    template_name = "editProduct.html"
+    fields = '__all__'

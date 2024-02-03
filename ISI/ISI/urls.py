@@ -19,9 +19,13 @@ from django.urls import path
 
 from core.views import frontPage, productManagePage
 
+from core.views import productCreateView, editProductView
+
 urlpatterns = [
     path('', frontPage, name="frontPage"),
     path('productManager/', productManagePage, name="productManager"),
+    path('add/', productCreateView.as_view(), name="addProduct"),
+     path('edit/<int:pk>/', editProductView.as_view(), name='editProduct'),
     path('admin/', admin.site.urls),
     
 ]
