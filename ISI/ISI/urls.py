@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from core.views import frontPage, productManagePage
+from core.views import frontPage, productManagePage, contactPage, aboutPage
 
 from store.views import productDetail, productCreateView, editProductView
 
@@ -26,7 +26,8 @@ from store.views import productDetail, productCreateView, editProductView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', frontPage, name="frontPage"),
-
+    path('contact/', contactPage, name='contactPage'),
+    path('about/', aboutPage, name='aboutPage'),
     path('productManager/', productManagePage, name="productManager"),
     path('productManager/add/', productCreateView.as_view(), name="addProduct"),
     path('productManager/edit/<int:pk>/', editProductView.as_view(), name='editProduct'),

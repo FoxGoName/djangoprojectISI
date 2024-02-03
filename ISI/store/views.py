@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.urls import reverse
 from django.views.generic import CreateView, UpdateView
 from .models import Product
 
@@ -15,6 +16,9 @@ class productCreateView(CreateView):
     model = Product
     template_name = "addProduct.html"
     fields = '__all__'
+
+    def get_success_url(self):
+        return reverse("productManager")
 
 class editProductView(UpdateView):
     model = Product

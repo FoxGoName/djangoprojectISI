@@ -3,6 +3,7 @@ from django.views.generic.edit import CreateView, UpdateView
 from store.models import Product
 
 # Create your views here.
+
 def frontPage(request):
 
     products = Product.objects.all()
@@ -22,3 +23,8 @@ def productManagePage(request):
     }
     return render(request, 'product.html', context)
 
+def aboutPage(request):
+    return render(request, 'about.html')
+
+def contactPage(request):
+    return render(request, 'contact.html')

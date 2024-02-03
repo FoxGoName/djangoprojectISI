@@ -19,11 +19,24 @@
 				</a>
 			</div>
 
+
+
         </nav>
+
 		<section class="section">
 			{% block content %}
             {% endblock %}
 		</section>
+		<footer>
+			<div>
+				<div>
+					<a href="{% url 'contactPage' %}">contact</a>
+				</div>
+				<div>
+					<a href="{% url 'aboutPage' %}">about</a>
+				</div>
+			</div>
+		</footer>
 
 		{% block scripts %}
 		{% endblock %}
