@@ -28,10 +28,11 @@ urlpatterns = [
     path('', frontPage, name="frontPage"),
     path('contact/', contactPage, name='contactPage'),
     path('about/', aboutPage, name='aboutPage'),
+    path('products/<slug:slug>/', productDetail, name="productDetail"),
     path('productManager/', productManagePage, name="productManager"),
     path('productManager/add/', productCreateView.as_view(), name="addProduct"),
     path('productManager/edit/<int:pk>/', editProductView.as_view(), name='editProduct'),
-    path('<slug:slug>/', productDetail, name="productDetail"),
+
 
     
 ]
