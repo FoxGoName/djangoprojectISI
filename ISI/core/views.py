@@ -10,7 +10,7 @@ def frontPage(request):
     context = {
         'products': products
     }
-    return render(request, 'front.html', context)
+    return render(request, 'core_temp/front.html', context)
 
 def contact(request):
     return render(request, 'contact.html')
